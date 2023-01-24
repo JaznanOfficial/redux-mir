@@ -2,42 +2,20 @@ import React, { useReducer } from "react";
 import { initialState, reducer } from "../state/formReducer";
 
 const LongForm = () => {
-    // const [state, dispatch] = useReducer(reducer, initialState);
-    const initialState = {
-        firstName: "",
-        lastName: "",
-        email: "",
-        gender: "",
-        education: "",
-        quantity: 0,
-        feedback: "",
-        term: true,
-    };
-    const reducer = (state, action) => {
-        switch (action.type) {
-            case "INPUT":
-                return {
-                    ...state,
-                    [action.payload.name]: action.payload.value,
-                };
+    
 
-            default:
-                return state;
-        }
-    };
-    const [state, dispatch] = useReducer(reducer, initialState);
 
-    const submit = (event) => {
+    const submitHandler = (event) => {
         event.preventDefault();
 
-        console.log(state);
+        console.log();
     };
 
     return (
         <div className="h-screen w-screen flex justify-center items-center overflow-auto">
             <form
                 className="shadow-lg p-10 rounded-md flex flex-wrap gap-3 max-w-3xl justify-between"
-                onSubmit={submit}
+                onSubmit={submitHandler}
             >
                 <div className="flex flex-col w-full max-w-xs">
                     <label className="mb-2" htmlFor="firstName">
@@ -47,12 +25,7 @@ const LongForm = () => {
                         type="text"
                         name="firstName"
                         id="firstName"
-                        onBlur={(e) =>
-                            dispatch({
-                                type: "INPUT",
-                                payload: { name: e.target.name, value: e.target.value },
-                            })
-                        }
+                        
                     />
                 </div>
                 <div className="flex flex-col w-full max-w-xs">
@@ -63,12 +36,7 @@ const LongForm = () => {
                         type="text"
                         name="lastName"
                         id="lastName"
-                        onBlur={(e) =>
-                            dispatch({
-                                type: "INPUT",
-                                payload: { name: e.target.name, value: e.target.value },
-                            })
-                        }
+                        
                     />
                 </div>
                 <div className="flex flex-col w-full max-w-xs">
@@ -79,12 +47,7 @@ const LongForm = () => {
                         type="email"
                         name="email"
                         id="email"
-                        onBlur={(e) =>
-                            dispatch({
-                                type: "INPUT",
-                                payload: { name: e.target.name, value: e.target.value },
-                            })
-                        }
+                        
                     />
                 </div>
                 <div className="flex flex-col w-full max-w-xs">
@@ -96,12 +59,7 @@ const LongForm = () => {
                                 id="male"
                                 name="gender"
                                 value="male"
-                                onBlur={(e) =>
-                                    dispatch({
-                                        type: "INPUT",
-                                        payload: { name: e.target.name, value: e.target.value },
-                                    })
-                                }
+                                
                             />
                             <label className="ml-2 text-lg" for="male">
                                 Male
@@ -113,12 +71,7 @@ const LongForm = () => {
                                 id="female"
                                 name="gender"
                                 value="female"
-                                onBlur={(e) =>
-                                    dispatch({
-                                        type: "INPUT",
-                                        payload: { name: e.target.name, value: e.target.value },
-                                    })
-                                }
+                                
                             />
                             <label className="ml-2 text-lg" for="female">
                                 Female
@@ -130,12 +83,7 @@ const LongForm = () => {
                                 id="other"
                                 name="gender"
                                 value="other"
-                                onBlur={(e) =>
-                                    dispatch({
-                                        type: "INPUT",
-                                        payload: { name: e.target.name, value: e.target.value },
-                                    })
-                                }
+                                
                             />
                             <label className="ml-2 text-lg" for="other">
                                 Other
@@ -150,12 +98,7 @@ const LongForm = () => {
                     <select
                         name="education"
                         id="education"
-                        onChange={(e) =>
-                            dispatch({
-                                type: "INPUT",
-                                payload: { name: e.target.name, value: e.target.value },
-                            })
-                        }
+                        
                     >
                         <option value="SSC">SSC</option>
                         <option value="HSC">HSC</option>
@@ -166,13 +109,13 @@ const LongForm = () => {
                 <div className="flex flex-col w-full max-w-xs">
                     <label className="mb-3">Number of PCs</label>
                     <div className="flex justify-between items-center gap-2 ">
-                        <button className="bg-indigo-500 text-lg text-white rounded h-10 w-10 ">
+                        <button className="bg-indigo-500 text-lg text-white rounded h-10 w-10 " >
                             -
                         </button>
                         <div className="border flex-1 flex justify-center items-center h-10 rounded-md border-gray-300">
                             <span className="text-lg">0</span>
                         </div>
-                        <button className="bg-indigo-500 text-lg text-white rounded h-10 w-10">
+                        <button className="bg-indigo-500 text-lg text-white rounded h-10 w-10" >
                             +
                         </button>
                     </div>
@@ -186,23 +129,25 @@ const LongForm = () => {
                         id="feedback"
                         cols="30"
                         rows="4"
-                        onBlur={(e) =>
-                            dispatch({
-                                type: "INPUT",
-                                payload: { name: e.target.name, value: e.target.value },
-                            })
-                        }
+                        
                     ></textarea>
                 </div>
 
                 <div className="flex justify-between items-center w-full">
                     <div className="flex  w-full max-w-xs">
-                        <input className="mr-3" type="checkbox" name="term" id="terms" />
+                        <input
+                            className="mr-3"
+                            type="checkbox"
+                            name="term"
+                            id="terms"
+                            
+                        />
                         <label for="terms">I agree to terms and conditions</label>
                     </div>
                     <button
                         className=" px-4 py-3 bg-indigo-500 rounded-md font-semibold text-white text-lg disabled:bg-gray-500"
                         type="submit"
+                        
                     >
                         Submit
                     </button>
