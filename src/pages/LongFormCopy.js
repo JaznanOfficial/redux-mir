@@ -1,6 +1,6 @@
 import React, { useReducer } from "react";
 import { actionTypes } from "../state/actionTypes";
-import { initialState, reducer } from "../state/formReducer";
+// import { initialState, reducer } from "../state/formReducer";
 
 const LongFormCopy = () => {
     const initialState = {
@@ -65,7 +65,7 @@ const LongFormCopy = () => {
                         id="firstName"
                         onBlur={(e) =>
                             dispatch({
-                                type: "INPUT",
+                                type: actionTypes.INPUT,
                                 payload: { name: e.target.name, value: e.target.value },
                             })
                         }
@@ -81,7 +81,7 @@ const LongFormCopy = () => {
                         id="lastName"
                         onBlur={(e) =>
                             dispatch({
-                                type: "INPUT",
+                                type: actionTypes.INPUT,
                                 payload: { name: e.target.name, value: e.target.value },
                             })
                         }
@@ -97,7 +97,7 @@ const LongFormCopy = () => {
                         id="email"
                         onBlur={(e) =>
                             dispatch({
-                                type: "INPUT",
+                                type: actionTypes.INPUT,
                                 payload: { name: e.target.name, value: e.target.value },
                             })
                         }
@@ -114,7 +114,7 @@ const LongFormCopy = () => {
                                 value="male"
                                 onBlur={(e) =>
                                     dispatch({
-                                        type: "INPUT",
+                                        type: actionTypes.INPUT,
                                         payload: { name: e.target.name, value: e.target.value },
                                     })
                                 }
@@ -131,7 +131,7 @@ const LongFormCopy = () => {
                                 value="female"
                                 onBlur={(e) =>
                                     dispatch({
-                                        type: "INPUT",
+                                        type: actionTypes.INPUT,
                                         payload: { name: e.target.name, value: e.target.value },
                                     })
                                 }
@@ -148,7 +148,7 @@ const LongFormCopy = () => {
                                 value="other"
                                 onBlur={(e) =>
                                     dispatch({
-                                        type: "INPUT",
+                                        type: actionTypes.INPUT,
                                         payload: { name: e.target.name, value: e.target.value },
                                     })
                                 }
@@ -168,7 +168,7 @@ const LongFormCopy = () => {
                         id="education"
                         onChange={(e) =>
                             dispatch({
-                                type: "INPUT",
+                                type: actionTypes.INPUT,
                                 payload: { name: e.target.name, value: e.target.value },
                             })
                         }
@@ -182,13 +182,13 @@ const LongFormCopy = () => {
                 <div className="flex flex-col w-full max-w-xs">
                     <label className="mb-3">Number of PCs</label>
                     <div className="flex justify-between items-center gap-2 ">
-                        <button className="bg-indigo-500 text-lg text-white rounded h-10 w-10 " onClick={()=>{dispatch({type:"DECREASE"})}}>
+                        <button className="bg-indigo-500 text-lg text-white rounded h-10 w-10 " onClick={()=>{dispatch({type:actionTypes.DECREASE})}}>
                             -
                         </button>
                         <div className="border flex-1 flex justify-center items-center h-10 rounded-md border-gray-300">
                             <span className="text-lg">{ state.quantity}</span>
                         </div>
-                        <button className="bg-indigo-500 text-lg text-white rounded h-10 w-10" onClick={()=>{dispatch({type:"INCREASE"})}}>
+                        <button className="bg-indigo-500 text-lg text-white rounded h-10 w-10" onClick={()=>{dispatch({type:actionTypes.INCREASE})}}>
                             +
                         </button>
                     </div>
@@ -204,7 +204,7 @@ const LongFormCopy = () => {
                         rows="4"
                         onBlur={(e) =>
                             dispatch({
-                                type: "INPUT",
+                                type: actionTypes.INPUT,
                                 payload: { name: e.target.name, value: e.target.value },
                             })
                         }
@@ -218,7 +218,7 @@ const LongFormCopy = () => {
                             type="checkbox"
                             name="term"
                             id="terms"
-                            onClick={() => dispatch({ type: "TOGGLE" })}
+                            onClick={() => dispatch({ type: actionTypes.TOGGLE })}
                         />
                         <label for="terms">I agree to terms and conditions</label>
                     </div>
