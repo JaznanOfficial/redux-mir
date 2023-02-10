@@ -1,24 +1,33 @@
-import Counter from "./components/Counter";
+import TodoList from "./components/TodoList";
+import Header from "./components/Header";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 export default function App() {
-  // !main topic: initial state, action dispatch, reducer function, store
-  // todo: 1. create an action type folder
-  // todo: 1. create an action
-  // todo: 1. create a reducer function
-  // todo: 1. create a store
-  // todo: 1. create a store
-  // todo: 1. create a store
-  // todo: 1. create a store
+    // !main topic: initial state, action dispatch, reducer function, store
+    // todo: 1. create an action type folder
+    // todo: 1. create an action
+    // todo: 1. create a reducer function
+    // todo: 1. create a store
+    // todo: 1. create a store
+    // todo: 1. create a store
+    // todo: 1. create a store
     return (
-        <div className="w-screen h-screen p-10 bg-gray-100 text-slate-700">
-            <h1 className="max-w-md mx-auto text-center text-2xl font-bold">
-                Simple Counter Application
-            </h1>
+        <div class="grid place-items-center bg-blue-100 h-screen px-6 font-sans">
+            <Navbar />
 
-            <div className="max-w-md mx-auto mt-10 space-y-5">
-                <Counter />
-                <Counter />
-                <Counter />
+            <div class="w-full max-w-3xl shadow-lg rounded-lg p-6 bg-white">
+                {/* <!-- header --> */}
+                <Header />
+                <hr class="mt-4" />
+
+                {/* <!-- todo list --> */}
+                <TodoList />
+
+                <hr class="mt-4" />
+
+                {/* <!-- footer --> */}
+                <Footer />
             </div>
         </div>
     );
