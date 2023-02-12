@@ -6,7 +6,7 @@ const initialState = [
     },
     {
         id: 2,
-        text: "learn react js",
+        text: "learn redux js",
         completed: false,
         color: "red",
     },
